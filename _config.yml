@@ -7,16 +7,15 @@
 
 # Site Settings
 locale                   : "ja-JP"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+title                    : "Toshiemon blog"
+title_separator          : "."
+name                     : "Seino Toshiaki"
+description              : "健忘録とかいろいろ技術的なサムシングを"
+url                      : "https://toshiemon18.github.io"
+baseurl                  :
+repository               : "toshiemon18/pages_project"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -55,11 +54,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               :
-facebook:
-  username               :
-  app_id                 :
-  publisher              :
+  username               : "toshiemon18"
 og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -77,19 +72,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Seino Toshiaki"
+  avatar           : "/assets/images/icon2.jpg"
+  bio              : "Rails, DeepLearning, openFrameworks..."
+  location         : "Hokkaido,Sapporo"
+  email            : "st12318@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "toshiemon18"
   foursquare       :
-  github           :
+  github           : "toshiemon18"
   google_plus      :
   keybase          :
   instagram        :
@@ -100,7 +95,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : "toshiemon18"
   vine             :
   weibo            :
   xing             :
