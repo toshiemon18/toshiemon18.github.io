@@ -1,1 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://toshiemon18.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toshiemon18.github.io/" rel="alternate" type="text/html" /><updated>2017-07-10T00:02:30+09:00</updated><id>https://toshiemon18.github.io/</id><title type="html">Toshiemon blog</title><subtitle>健忘録とかいろいろ技術的なサムシングを</subtitle><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://toshiemon18.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toshiemon18.github.io/" rel="alternate" type="text/html" /><updated>2017-08-18T16:01:18+09:00</updated><id>https://toshiemon18.github.io/</id><title type="html">Toshiemon blog</title><subtitle>健忘録とかいろいろ技術的なサムシングを</subtitle><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author><entry><title type="html">NeoVimに移行した</title><link href="https://toshiemon18.github.io/NeoVim-Introduction/" rel="alternate" type="text/html" title="NeoVimに移行した" /><published>2017-08-18T00:00:00+09:00</published><updated>2017-08-18T00:00:00+09:00</updated><id>https://toshiemon18.github.io/NeoVim-Introduction</id><content type="html" xml:base="https://toshiemon18.github.io/NeoVim-Introduction/">&lt;h2 id=&quot;neovimに移行した&quot;&gt;NeoVimに移行した&lt;/h2&gt;
+&lt;p&gt;Atomにvim-mde-plusやvim-surround等入れて頑張ってたけど限界だったのでNeoVimにしちゃえということで導入した。&amp;lt;/br&amp;gt;
+忘備録的な感じで導入の仕方をまとめておく（Macでやったので大した事ない） 。&amp;lt;/br&amp;gt;
+蛇足でUniteからDenite、NeocompleteからDeopleteに移行した話も書いておく。&amp;lt;/br&amp;gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;neovimのインストール&quot;&gt;NeoVimのインストール&lt;/h2&gt;
+&lt;p&gt;Macなのでhomebrew使ってチャチャっと済ます&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install neovim/neovim/neovim
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;そしたらなんか色々表示してくれるので、その通りにしたりする。&amp;lt;/br&amp;gt;
+このとき、NeoVimの設定ファイルを置いたりするディレクトリは&lt;code class=&quot;highlighter-rouge&quot;&gt;$XDG_CONFIG_HOME&lt;/code&gt;という環境変数によって変えることが出来る。デフォルトは&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.config/nvim&lt;/code&gt;になっているっぽい。&lt;/p&gt;
+
+&lt;h2 id=&quot;各種設定&quot;&gt;各種設定&lt;/h2&gt;
+&lt;p&gt;自分はシンボリックリンク貼らずに現在のVimの設定ファイルをまとめているディレクトリからcpコマンドでコピーした。&amp;lt;/br&amp;gt;
+ちなみにディレクトリ構成はこんな感じ。NeoVimはinit.vimを最初に読み込むので、deinの設定はこの中に書いておいた。各種設定は各自のお好みでよしなに書いて欲しい。&amp;lt;/br&amp;gt;
+NeoVim導入を機にvimrcの整理と更新も出来たのでよかった。&amp;lt;/br&amp;gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.config/nvim
+  |-- init.vim
+  |-- color
+  |    |-- monokai.vim
+  |-- dein                        # deinでインストールしたプラグインが入ってる
+  |-- dein_files
+  |    |-- dein_plugs.toml
+  |    |-- dein_plugs_lazy.toml
+  |-- ftplugins                   # ファイルの種類別に設定を書いておく場所
+  |-- userautoload                # NeoVimの基本設定とかプラグインの設定を置く場所
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;以下のリポジトリで設定ファイルを管理している。
+&lt;a href=&quot;https://github.com/toshiemon18/nvimrc&quot;&gt;https://github.com/toshiemon18/nvimrc&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;uniteからdeniteへの移行&quot;&gt;UniteからDeniteへの移行&lt;/h2&gt;
+&lt;p&gt;Uniteから&lt;a href=&quot;https://github.com/Shougo/denite.nvim&quot;&gt;Denite&lt;/a&gt;への移行について触れる。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dark powered asynchronous unite all interfaces for Neovim/Vim8 &amp;lt;/br&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;暗黒美夢王謹製のプラグインで、Unite.vimが暗黒の力を手に入れたため高速になったらしい。
+僕の場合は&lt;code class=&quot;highlighter-rouge&quot;&gt;dein_files/dein_plugs.toml&lt;/code&gt;に以下のコードを追加した。&lt;/p&gt;
+&lt;div class=&quot;language-toml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[[plugins]]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;repo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Shougo/denite.nvim&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;次に、DeniteはPython3を使うので、自分の環境で&lt;code class=&quot;highlighter-rouge&quot;&gt;which python3&lt;/code&gt;などしてそのPATHを設定ファイルの何処かに次のように記述しておく。&lt;/p&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:python3_host_prog&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;expand&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/path/to/your/python'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Deniteの設定は適当にググって自分の好きなように書けばおk。たぶんUniteと同じノリでイケるはず。 &amp;lt;/br&amp;gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;neocompleteからdeopleteへの移行&quot;&gt;NeocompleteからDeopleteへの移行&lt;/h2&gt;
+&lt;p&gt;Neocompleteから&lt;a href=&quot;https://github.com/Shougo/deoplete.nvim&quot;&gt;Deoplete&lt;/a&gt;への移行についても触れる。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dark powered asynchronous completion framework for neovim&amp;lt;/br&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;こちらもやはり暗黒美夢王謹製のプラグイン。Deopleteは自動補完のフレームワークで、sourceと呼ばれる各言語の補完システムを導入することでそれぞれの言語の補完を実現するらしい。
+こちらもPython3を使うが、Deniteのところで設定したので問題ナッシング。&amp;lt;/br&amp;gt;
+&lt;a href=&quot;https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources&quot;&gt;ここ&lt;/a&gt;にそのsourceがまとまってるので必要な言語のsourceをインストールすればおk。&amp;lt;/br&amp;gt;
+Denite同様にtomlに以下を追加した。&lt;/p&gt;
+&lt;div class=&quot;language-toml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[[plugins]]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;repo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Shougo/deoplete.nvim&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;おわり&quot;&gt;おわり&lt;/h2&gt;
+&lt;p&gt;上記やって適当に設定書いていい感じになったのでNeoVim使っていき！&lt;/p&gt;</content><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author><category term="Vim" /><category term="Programming" /><summary type="html">NeoVimに移行した Atomにvim-mde-plusやvim-surround等入れて頑張ってたけど限界だったのでNeoVimにしちゃえということで導入した。&amp;lt;/br&amp;gt; 忘備録的な感じで導入の仕方をまとめておく（Macでやったので大した事ない） 。&amp;lt;/br&amp;gt; 蛇足でUniteからDenite、NeocompleteからDeopleteに移行した話も書いておく。&amp;lt;/br&amp;gt;</summary></entry></feed>
