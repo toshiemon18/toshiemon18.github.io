@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://toshiemon18.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toshiemon18.github.io/" rel="alternate" type="text/html" /><updated>2017-08-18T16:01:18+09:00</updated><id>https://toshiemon18.github.io/</id><title type="html">Toshiemon blog</title><subtitle>健忘録とかいろいろ技術的なサムシングを</subtitle><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author><entry><title type="html">NeoVimに移行した</title><link href="https://toshiemon18.github.io/NeoVim-Introduction/" rel="alternate" type="text/html" title="NeoVimに移行した" /><published>2017-08-18T00:00:00+09:00</published><updated>2017-08-18T00:00:00+09:00</updated><id>https://toshiemon18.github.io/NeoVim-Introduction</id><content type="html" xml:base="https://toshiemon18.github.io/NeoVim-Introduction/">&lt;h2 id=&quot;neovimに移行した&quot;&gt;NeoVimに移行した&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://toshiemon18.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toshiemon18.github.io/" rel="alternate" type="text/html" /><updated>2017-10-26T18:11:55+09:00</updated><id>https://toshiemon18.github.io/</id><title type="html">Toshiemon blog</title><subtitle>健忘録とかいろいろ技術的なサムシングを</subtitle><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author><entry><title type="html">古いバージョンのimagemagick入れたいときの忘備録</title><link href="https://toshiemon18.github.io/Old-Version-Imagemagick-Install/" rel="alternate" type="text/html" title="古いバージョンのimagemagick入れたいときの忘備録" /><published>2017-10-26T00:00:00+09:00</published><updated>2017-10-26T00:00:00+09:00</updated><id>https://toshiemon18.github.io/Old-Version-Imagemagick-Install</id><content type="html" xml:base="https://toshiemon18.github.io/Old-Version-Imagemagick-Install/">&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Railsでbundle installしたらrmagickでコケる&lt;/li&gt;
+  &lt;li&gt;rmagick2.16.0 (記事時点での最新バージョン)がimagemagick7に未対応&lt;/li&gt;
+  &lt;li&gt;過去バージョン入れればいいのはわかるけどやり方がわからん
+    &lt;ul&gt;
+      &lt;li&gt;ググったらやり方を見つけた&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ハマった箇所&quot;&gt;ハマった箇所&lt;/h2&gt;
+&lt;p&gt;rmagickのインストール時に以下のようなエラーが出た.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Can't install RMagick 2.16.0. Can't find the ImageMagick library or one of the dependent libraries. Check the mkmf.log file for more detailed information.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;エラーメッセージでググったら以下のような記事が見つかったのでやってみた.
+&lt;a href=&quot;https://qiita.com/ShuntaShirai/items/c582c0acebe2dbf03fc3&quot;&gt;mgickのインストールにハマった&lt;/a&gt;
+解決した方法という箇所に書いてある通りimagemagick6の適当なリビジョンを探してcheckoutしたあとにbrew install imagemagickという流れでやってみたが, 7.0.7がインストールされてしまった.
+しかし, comment欄にある方法で解決したのでこちらを推す&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/6f014f2b7f1f9e618fd5c0ae9c93befea671f8be/Formula/imagemagick.rb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;リビジョンは適当に指定すると良さそう&lt;/p&gt;</content><author><name>Seino Toshiaki</name><email>st12318@gmail.com</email></author><category term="Programming" /><category term="Rails" /><summary type="html">TL;DR Railsでbundle installしたらrmagickでコケる rmagick2.16.0 (記事時点での最新バージョン)がimagemagick7に未対応 過去バージョン入れればいいのはわかるけどやり方がわからん ググったらやり方を見つけた</summary></entry><entry><title type="html">NeoVimに移行した</title><link href="https://toshiemon18.github.io/NeoVim-Introduction/" rel="alternate" type="text/html" title="NeoVimに移行した" /><published>2017-08-18T00:00:00+09:00</published><updated>2017-08-18T00:00:00+09:00</updated><id>https://toshiemon18.github.io/NeoVim-Introduction</id><content type="html" xml:base="https://toshiemon18.github.io/NeoVim-Introduction/">&lt;h2 id=&quot;neovimに移行した&quot;&gt;NeoVimに移行した&lt;/h2&gt;
 &lt;p&gt;Atomにvim-mde-plusやvim-surround等入れて頑張ってたけど限界だったのでNeoVimにしちゃえということで導入した。&amp;lt;/br&amp;gt;
 忘備録的な感じで導入の仕方をまとめておく（Macでやったので大した事ない） 。&amp;lt;/br&amp;gt;
 蛇足でUniteからDenite、NeocompleteからDeopleteに移行した話も書いておく。&amp;lt;/br&amp;gt;&lt;/p&gt;
